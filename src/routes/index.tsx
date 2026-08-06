@@ -6,12 +6,17 @@ import { ROUTES } from '../constants/routes';
 // Lazy loading page components for optimal performance & code splitting
 const HomePage = lazy(() => import('../pages/HomePage'));
 const ServicesPage = lazy(() => import('../pages/ServicesPage'));
-const AboutPage = lazy(() => import('../pages/AboutPage'));
-const ContactPage = lazy(() => import('../pages/ContactPage'));
+const LaptopRepairPage = lazy(() => import('../pages/LaptopRepairPage'));
+const DesktopRepairPage = lazy(() => import('../pages/DesktopRepairPage'));
+const MotherboardRepairPage = lazy(() => import('../pages/MotherboardRepairPage'));
+const DataRecoveryPage = lazy(() => import('../pages/DataRecoveryPage'));
+const DoorstepRepairPage = lazy(() => import('../pages/DoorstepRepairPage'));
+const AmcServicesPage = lazy(() => import('../pages/AmcServicesPage'));
 const SecondHandLaptopsPage = lazy(() => import('../pages/SecondHandLaptopsPage'));
 const AccessoriesPage = lazy(() => import('../pages/AccessoriesPage'));
-const AmcServicesPage = lazy(() => import('../pages/AmcServicesPage'));
-const DataRecoveryPage = lazy(() => import('../pages/DataRecoveryPage'));
+const AboutPage = lazy(() => import('../pages/AboutPage'));
+const ContactPage = lazy(() => import('../pages/ContactPage'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 const PageLoader: React.FC = () => (
   <div className="flex items-center justify-center min-h-[60vh]">
@@ -44,18 +49,50 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: ROUTES.ABOUT,
+        path: ROUTES.LAPTOP_REPAIR,
         element: (
           <Suspense fallback={<PageLoader />}>
-            <AboutPage />
+            <LaptopRepairPage />
           </Suspense>
         ),
       },
       {
-        path: ROUTES.CONTACT,
+        path: ROUTES.DESKTOP_REPAIR,
         element: (
           <Suspense fallback={<PageLoader />}>
-            <ContactPage />
+            <DesktopRepairPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: ROUTES.MOTHERBOARD_REPAIR,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <MotherboardRepairPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: ROUTES.DATA_RECOVERY,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <DataRecoveryPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: ROUTES.DOORSTEP_REPAIR,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <DoorstepRepairPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: ROUTES.AMC_SERVICES,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <AmcServicesPage />
           </Suspense>
         ),
       },
@@ -76,18 +113,18 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: ROUTES.AMC_SERVICES,
+        path: ROUTES.ABOUT,
         element: (
           <Suspense fallback={<PageLoader />}>
-            <AmcServicesPage />
+            <AboutPage />
           </Suspense>
         ),
       },
       {
-        path: ROUTES.DATA_RECOVERY,
+        path: ROUTES.CONTACT,
         element: (
           <Suspense fallback={<PageLoader />}>
-            <DataRecoveryPage />
+            <ContactPage />
           </Suspense>
         ),
       },
@@ -95,7 +132,7 @@ const router = createBrowserRouter([
         path: '*',
         element: (
           <Suspense fallback={<PageLoader />}>
-            <HomePage />
+            <NotFoundPage />
           </Suspense>
         ),
       },
