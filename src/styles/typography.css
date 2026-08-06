@@ -1,0 +1,42 @@
+@layer utilities {
+  .text-display {
+    font-family: var(--font-display, 'Outfit', sans-serif);
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08];
+  }
+
+  .text-h1 {
+    font-family: var(--font-display, 'Outfit', sans-serif);
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight;
+  }
+
+  .text-h2 {
+    font-family: var(--font-display, 'Outfit', sans-serif);
+    @apply text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight leading-snug;
+  }
+
+  .text-h3 {
+    font-family: var(--font-display, 'Outfit', sans-serif);
+    @apply text-xl sm:text-2xl font-semibold tracking-tight leading-snug;
+  }
+
+  .text-h4 {
+    font-family: var(--font-display, 'Outfit', sans-serif);
+    @apply text-lg sm:text-xl font-medium tracking-normal leading-normal;
+  }
+
+  .text-body-lg {
+    @apply text-base sm:text-lg font-normal leading-relaxed text-text-secondary;
+  }
+
+  .text-body {
+    @apply text-sm sm:text-base font-normal leading-relaxed text-text-secondary;
+  }
+
+  .text-small {
+    @apply text-xs sm:text-sm font-medium text-text-muted;
+  }
+
+  .text-caption {
+    @apply text-xs font-medium tracking-wider uppercase text-text-muted;
+  }
+}
